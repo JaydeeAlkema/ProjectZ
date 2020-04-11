@@ -16,8 +16,10 @@ public class ConnectionTest : MonoBehaviourPunCallbacks
 
 	public override void OnConnectedToMaster()
 	{
-		Debug.Log("Connected to server!");
+		Debug.Log("Connected to Photon.", this);
 		Debug.Log(PhotonNetwork.LocalPlayer.NickName);
+
+		PhotonNetwork.JoinLobby();
 	}
 
 	public override void OnDisconnected(DisconnectCause cause)
